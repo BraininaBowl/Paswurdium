@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Paswurdium</title>
+  </head>
+  <body id="body">
+    <div id="main">
+      <h1>Paswurdium</h1>
+      <form id="passwordForm">
+        <label for="numberOfPasswords"
+          >Number of Passwords:
+          <input
+            type="number"
+            id="numberOfPasswords"
+            name="numberOfPasswords"
+            min="1"
+            max="100"
+            value="10"
+          />
+        </label>
+        <label for="includeSpecialChars">
+          <input
+            type="checkbox"
+            id="includeSpecialChars"
+            name="includeSpecialChars"
+          />
+          Add special character</label
+        >
+        <label for="includeNumber">
+          <input type="checkbox" id="includeNumber" name="includeNumber" /> Add
+          number</label
+        >
+        <button id="generateButton">Generate Passwords</button>
+      </form>
+      <div id="passwordDisplay"></div>
+    </div>
+  </body>
+  <script src="buckets/adjectiveBucket.js"></script>
+  <script src="buckets/adverbBucket.js"></script>
+  <script src="buckets/articleBucket.js"></script>
+  <script src="buckets/nounBucket.js"></script>
+  <script src="buckets/numberBucket.js"></script>
+  <script src="buckets/prepositionBucket.js"></script>
+  <script src="buckets/seperatorBucket.js"></script>
+  <script src="buckets/specialCharBucket.js"></script>
+  <script src="buckets/temporalBucket.js"></script>
+  <script src="buckets/verbBucket.js"></script>
+  <script src="scripts/script.js"></script>
+</html>
