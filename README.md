@@ -1,6 +1,7 @@
 # Paswurdium
 
-Generate bunches of passwords
+#### Generate bunches of passwords.
+You can use the default version at https://braininabowl.github.io/Paswurdium/, but I highly recommend cloning this project and filling the word buckets with your own content.
 
 ## How to use
 
