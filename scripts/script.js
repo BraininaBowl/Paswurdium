@@ -1,5 +1,7 @@
 const numberOfPasswordsElement = document.getElementById("numberOfPasswords");
-const includeSpecialCharsElement = document.getElementById("includeSpecialChars");
+const includeSpecialCharsElement = document.getElementById(
+  "includeSpecialChars",
+);
 const includeNumberElement = document.getElementById("includeNumber");
 
 const generateButton = document.getElementById("generateButton");
@@ -17,6 +19,63 @@ const allWordsBucket = adjectiveBucket.concat(
 
 function getRandomWordFromBucket(bucket) {
   return bucket[Math.floor(Math.random() * bucket.length)];
+}
+
+function toVerb(verb) {
+  const lastChar = verb.charAt(verb.length - 1);
+  const secondLastChar = verb.charAt(verb.length - 2);
+  if (lastChar == "y" && !["a", "e", "i", "o", "u"].includes(secondLastChar)) {
+    return verb.substring(0, verb.length - 1) + "ies";
+  } else if (
+    verb.endsWith("s") ||
+    verb.endsWith("x") ||
+    verb.endsWith("z") ||
+    verb.endsWith("ch") ||
+    verb.endsWith("sh")
+  ) {
+    return verb + "es";
+  } else {
+    return verb + "s";
+  }
+}
+
+function toGerund(verb) {
+  const lastChar = verb.charAt(verb.length - 1);
+  const secondLastChar = verb.charAt(verb.length - 2);
+  const thirdLastChar = verb.charAt(verb.length - 3);
+  if (lastChar == "e" && secondLastChar != "e") {
+    return verb.substring(0, verb.length - 1) + "ing";
+  } else if (lastChar == "e" && secondLastChar == "i") {
+    return verb.substring(0, verb.length - 2) + "ying";
+  } else if (
+    [
+      "q",
+      "w",
+      "r",
+      "t",
+      "p",
+      "s",
+      "d",
+      "f",
+      "g",
+      "h",
+      "k",
+      "l",
+      "z",
+      "x",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+    ].includes(lastChar) &&
+    ["a", "e", "i", "o", "u"].includes(secondLastChar) &&
+    !["a", "e", "i", "o", "u"].includes(thirdLastChar)
+  ) {
+    return verb + lastChar + "ing";
+  } else {
+    return verb + "ing";
+  }
 }
 
 function capitalize(sentence) {
@@ -47,7 +106,7 @@ function generatePassword(includeSpecialChars, includeNumber) {
     return word;
   }
 
-  const passwordStyle = Math.floor(Math.random() * 3);
+  const passwordStyle = Math.floor(Math.random() * 4);
   if (passwordStyle === 0) {
     // Style Gobbledegook
     let capitals = Math.random() < 0.5;
@@ -62,42 +121,64 @@ function generatePassword(includeSpecialChars, includeNumber) {
     }
   } else if (passwordStyle === 1) {
     // Style Quick Brown Fox
-    password =
+    password +=
       processWord(capitalize(getRandomWordFromBucket(articleBucket))) +
-      seperator +
-      processWord(getRandomWordFromBucket(adjectiveBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(nounBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(adverbBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(verbBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(prepositionBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(articleBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(adjectiveBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(nounBucket));
+      seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(adjectiveBucket)) + seperator;
+    }
+    password += processWord(getRandomWordFromBucket(nounBucket)) + seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(adverbBucket)) + seperator;
+    }
+    password +=
+      processWord(toVerb(getRandomWordFromBucket(verbBucket))) + seperator;
+    password +=
+      processWord(getRandomWordFromBucket(prepositionBucket)) + seperator;
+    password += processWord(getRandomWordFromBucket(articleBucket)) + seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(adjectiveBucket)) + seperator;
+    }
+    password += processWord(getRandomWordFromBucket(nounBucket));
+  } else if (passwordStyle === 2) {
+    // Style saga
+    password +=
+      processWord(capitalize(getRandomWordFromBucket(articleBucket))) +
+      seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(adjectiveBucket)) + seperator;
+    }
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(toGerund(getRandomWordFromBucket(verbBucket))) + seperator;
+    }
+    password += processWord(getRandomWordFromBucket(nounBucket)) + seperator;
+    password += processWord(getRandomWordFromBucket(adverbBucket)) + seperator;
+    password += processWord(toVerb(getRandomWordFromBucket(verbBucket)));
   } else {
     // Style saying
-    password =
+    password +=
       processWord(capitalize(getRandomWordFromBucket(articleBucket))) +
-      seperator +
-      processWord(getRandomWordFromBucket(adjectiveBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(nounBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(verbBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(temporalBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(articleBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(nounBucket)) +
-      seperator +
-      processWord(getRandomWordFromBucket(verbBucket));
+      seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(adjectiveBucket)) + seperator;
+    }
+    password += processWord(getRandomWordFromBucket(nounBucket)) + seperator;
+    password +=
+      processWord(toVerb(getRandomWordFromBucket(verbBucket))) + seperator;
+    password +=
+      processWord(getRandomWordFromBucket(temporalBucket)) + seperator;
+    if (Math.random() < 0.6) {
+      password +=
+        processWord(getRandomWordFromBucket(articleBucket)) + seperator;
+    }
+    password += processWord(getRandomWordFromBucket(nounBucket)) + seperator;
+    password += processWord(toVerb(getRandomWordFromBucket(verbBucket)));
   }
 
   // add numbers and specials at the end of the password, if they haven't been included yet

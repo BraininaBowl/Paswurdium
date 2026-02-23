@@ -4,4 +4,6 @@ const articleBucket = [
     "one",
     "some",
     "any",
-    "this",]
+    "this",
+    "that",
+]
