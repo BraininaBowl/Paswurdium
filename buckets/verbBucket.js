@@ -1,4 +1,5 @@
-const verbBucket = [
+const verbBucket = {
+  en: [
     "run",
     "jump",
     "swim",
@@ -48,8 +49,29 @@ const verbBucket = [
     "cry",
     "laugh",
     "smile",
-    "dance", 
+    "dance",
     "enter",
     "exit",
     "fly",
-    ]
+  ],
+  nl: [
+    "ren",
+    "spring",
+    "zwem",
+    "zing",
+    "lees",
+    "denk",
+    "spreek",
+    "luister",
+    "eet",
+    "drink",
+    "slaap",
+    "stroom",
+    "groei",
+    "krimp",
+    "val",
+    "sta",
+    "zit",
+    "loop",
+  ],
+};

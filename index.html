@@ -8,7 +8,11 @@
   <body id="body">
     <div id="main">
       <h1>Paswurdium</h1>
-      <p class="note"><strong>Note:</strong> This public version of Paswurdium only knows a limited set of words. I highly recommend creating your own word buckets to increase the variety of generated passwords.</p>
+      <p class="note">
+        <strong>Note:</strong> This public version of Paswurdium only knows a
+        limited set of words. I highly recommend creating your own word buckets
+        to increase the variety of generated passwords.
+      </p>
       <form id="passwordForm">
         <label for="numberOfPasswords"
           >Number of Passwords:
@@ -21,23 +25,42 @@
             value="10"
           />
         </label>
+        <label for="languageSelect"
+          >Language:
+          <select id="languageSelect" name="languageSelect">
+            <option value="en">English</option>
+            <option value="nl" selected>Dutch</option>
+          </select></label
+        >
+        <label for="forceCapital">
+          <input type="checkbox" id="forceCapital" name="forceCapital" checked/> Force
+          capitals</label
+        >
         <label for="includeSpecialChars">
           <input
             type="checkbox"
             id="includeSpecialChars"
-            name="includeSpecialChars"
+            name="includeSpecialChars" checked
           />
           Add special character</label
         >
         <label for="includeNumber">
-          <input type="checkbox" id="includeNumber" name="includeNumber" /> Add
-          number</label
-        >
+          <input type="checkbox" id="includeNumber" name="includeNumber" checked/> Add
+          number
+        </label>
+        <label for="specialsAtEnd">
+          <input type="checkbox" id="specialsAtEnd" name="specialsAtEnd" checked/> Put
+          special characters at the end
+        </label>
         <button id="generateButton">Generate Passwords</button>
       </form>
       <div id="passwordDisplay"></div>
     </div>
-    <p>Paswurdium is open source and freely available under the MIT License. Get the source at <a href="https://github.com/BraininaBowl/Paswurdium">GitHub</a>.</p>
+    <p>
+      Paswurdium is open source and freely available under the MIT License. Get
+      the source at
+      <a href="https://github.com/BraininaBowl/Paswurdium">GitHub</a>.
+    </p>
   </body>
   <script src="buckets/adjectiveBucket.js"></script>
   <script src="buckets/adverbBucket.js"></script>

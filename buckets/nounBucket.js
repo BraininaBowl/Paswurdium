@@ -1,4 +1,5 @@
-const nounBucket = [
+const nounBucket = {
+  en: [
     "fox",
     "cat",
     "dog",
@@ -49,4 +50,33 @@ const nounBucket = [
     "notebook",
     "guitar",
     "piano",
-]
+  ],
+  nl: [
+    "vos",
+    "kat",
+    "hond",
+    "auto",
+    "boom",
+    "huis",
+    "rivier",
+    "berg",
+    "lucht",
+    "oceaan",
+    "boek",
+    "telefoon",
+    "computer",
+    "stoel",
+    "tafel",
+    "fles",
+    "beker",
+    "pen",
+    "potlood",
+    "papier",
+    "raam",
+    "deur",
+    "weg",
+    "hamer",
+    "zaag",
+    "mes",
+    "held",]
+};

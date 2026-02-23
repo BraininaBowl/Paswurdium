@@ -1,13 +1,25 @@
-const temporalBucket = [
-  "since",
-  "except",
-  "until",
-  "before",
-  "after",
-  "when",
-  "while",
-  "as",
-  "once",
-  "by",
-  "for",
-];
+const temporalBucket = {
+  en: [
+    "since",
+    "except",
+    "until",
+    "before",
+    "after",
+    "when",
+    "while",
+    "as",
+    "once",
+    "by",
+    "for",
+  ],
+  nl: [
+    "sinds",
+    "totdat",
+    "voordat",
+    "nadat",
+    "wanneer",
+    "terwijl",
+    "zoals",
+    "zodra",
+  ],
+};

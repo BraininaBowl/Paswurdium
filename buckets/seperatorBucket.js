@@ -1,5 +1,1 @@
-const seperatorBucket = [
-    "_",
-    ".",
-    "-",
-  ];
+const seperatorBucket = { en: ["_", ".", "-"], nl: ["_", ".", "-"] };

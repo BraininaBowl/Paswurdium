@@ -1,4 +1,5 @@
-const adjectiveBucket = [
+const adjectiveBucket = {
+  en: [
     "quick",
     "brown",
     "lazy",
@@ -59,4 +60,29 @@ const adjectiveBucket = [
     "reliable",
     "sincere",
     "trustworthy",
-]
+  ],
+  nl : [
+    "snelle",
+    "bruine",
+    "luie",
+    "gelukkige",
+    "verdrietige",
+    "boze",
+    "heldere",
+    "donkere",
+    "grote",
+    "kleine",
+    "sterke",
+    "zwakke",
+    "mooie",
+    "lelijke",
+    "langzame",
+    "warme",
+    "koude",
+    "nieuwe",
+    "oude",
+    "schattige",
+    "dappere",
+    "kalme",
+    "heerlijke",]
+};

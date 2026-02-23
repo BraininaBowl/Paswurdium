@@ -1,4 +1,5 @@
-const adverbBucket = [
+const adverbBucket = {
+  en: [
     "quickly",
     "slowly",
     "happily",
@@ -35,4 +36,12 @@ const adverbBucket = [
     "gladly",
     "clearly",
     "quietly",
-];
+  ],
+  nl: [
+    "snel",
+    "langzaam",
+    "gelukkig",
+    "verdrietig",
+    "boos",
+    "helder",]  
+};
