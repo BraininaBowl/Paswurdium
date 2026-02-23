@@ -97,5 +97,13 @@ const verbBucket = {
     "verbeter",
     "inspireer",
     "leer",
+    "beheer",
+    "huil",
+    "lach",
+    "glimlach",
+    "dans",
+    "betreed",
+    "verlaat",
+    "vlieg",
   ],
 };

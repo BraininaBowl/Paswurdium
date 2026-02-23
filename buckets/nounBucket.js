@@ -96,5 +96,12 @@ const nounBucket = {
     "vogel",
     "vis",
     "insect",
-    "motor",]
+    "motor",
+    "wiel",
+    "brug",
+    "notitieboek",
+    "gitaar",
+    "piano",
+    
+  ],
 };

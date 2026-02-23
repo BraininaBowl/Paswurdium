@@ -103,9 +103,14 @@ function toGerund(verb, language) {
       return verb + "ing";
     }
   } else if (language === "nl") {
+    // Round one: handle some irregularities
     if (lastChar == "s") {
       verb = verb.substring(0, verb.length - 1) + "z";
     }
+    if (lastChar == "f") {
+      verb = verb.substring(0, verb.length - 1) + "v";
+    }
+    // Round two: handle regular rules
     if (
       [
         "q",
