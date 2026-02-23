@@ -156,6 +156,12 @@ function toGerund(verb, language) {
       !["a", "e", "i", "o", "u"].includes(thirdLastChar)
     ) {
       return verb + lastChar + "ende";
+    } else if (["a", "e", "o", "u"].includes(lastChar)) {
+      if (["a", "e", "o", "i", "u"].includes(secondLastChar)) {
+        return verb + "nde";
+      } else {
+        return verb + lastChar + "nde";
+      }
     } else {
       return verb + "ende";
     }

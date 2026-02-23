@@ -58,5 +58,11 @@ const prepositionBucket = {
     "tot",
     "richting",
     "onder",
+    "op",
+    "in",
+    "uit",
+    "naar",
+    "tegen",
+    "rond",
   ]
 };

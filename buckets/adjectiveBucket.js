@@ -84,5 +84,19 @@ const adjectiveBucket = {
     "schattige",
     "dappere",
     "kalme",
-    "heerlijke",]
+    "heerlijke",
+    "elegante",
+    "knappe",
+    "intelligente",
+    "vrolijke",
+    "vriendelijke",
+    "levendige",
+    "mysterieuze",
+    "nobele",
+    "vreedzame",
+    "rustige",
+    "aardige",
+    "domme",
+    "doordachte",
+    "levendige",]
 };
