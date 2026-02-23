@@ -104,7 +104,26 @@ function toGerund(verb, language) {
     }
   } else if (language === "nl") {
     // Round one: handle some irregularities
-    if (lastChar == "s") {
+    if (lastChar == "s" && ![
+      "q",
+      "w",
+      "r",
+      "t",
+      "p",
+      "s",
+      "d",
+      "f",
+      "g",
+      "h",
+      "k",
+      "l",
+      "z",
+      "c",
+      "v",
+      "b",
+      "n",
+      "m",
+    ].includes(secondLastChar)) {
       verb = verb.substring(0, verb.length - 1) + "z";
     }
     if (lastChar == "f") {
